@@ -32,6 +32,10 @@ def to_usd(my_price):
 
 #print(products)
 
+# INPUT
+
+total_price = 0
+
 while True: 
     selected_id = input("Please input a product identifier, or 'DONE' if there are no more items: ") #> "9" (string)
     # print(selected_id)
@@ -45,5 +49,10 @@ while True:
         matching_product = matching_products[0] #> (dictionary)
         # print(matching_product)
         # print(type(matching_product))
+        total_price = total_price + matching_product["price"]
         print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
 
+# OUTPUT
+
+
+print("TOTAL PRICE: " + str(total_price)) # FORMAT AS USD
