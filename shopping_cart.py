@@ -1,19 +1,5 @@
-# shopping-cart
+# shopping_cart.py
 
-## Setup
-Create a new repository called "shopping-cart" using the GitHub online interface. Add a "README.md" file and a Python-flavored ".gitignore" file. 
-
-After creating the remote repo, use GitHub Desktop software or the command-line to download or "clone" it onto your computer. Choose a familiar download location like Documents.
-
-After cloning the repo, navigate there from the command-line:
-
-```sh
-cd ~/Documents/GitHub/rock-paper-scissors-exercise
-```
-
-Use your text editor or the command-line to create a file in that repo called "shopping_cart.py", and then place the following contents inside:
-
-```
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -54,24 +40,3 @@ def to_usd(my_price):
 # TODO: write some Python code here to produce the desired output
 
 print(products)
-```
-
-## Environment Setup
-
-It is possible to complete this project using the "base" Anaconda environment, because the basic requirements don't require any third-party packages. However if you eventually end up tackling bonus challenges that require third-party packages, then you'll want to create and activate a new Anaconda virtual environment, and use a "requirements.txt" file approach to installing your packages:
-
-```
-# IF USING THIRD-PARTY PACKAGES, USE A NEW ENV:
-conda create -n shopping-env python=3.8 
-conda activate shopping-env
-pip install -r requirements.txt # (after specifying desired packages inside)
-```
-
-Within an active virtual environment of choice ("base" or project-specific), demonstrate your ability to run the Python script from the command-line:
-
-```
-python shopping_cart.py
-```
-
-If you see the provided "products" data structure, you're ready to move on to project development.
-
