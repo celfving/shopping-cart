@@ -25,15 +25,6 @@ products = [
 
 
 def to_usd(my_price):
-    """
-    Converts a numeric value to usd-formatted string, for printing and display purposes.
-
-    Param: my_price (int or float) like 4000.444444
-
-    Example: to_usd(4000.444444)
-
-    Returns: $4,000.44
-    """
     return f"${my_price:,.2f}" #> $12,000.71
 
 
@@ -42,5 +33,15 @@ def to_usd(my_price):
 #print(products)
 
 selected_id = input("Please input a product identifier, or 'DONE' if there are no more items: ") #> "9" (string)
-print(selected_id)
-print(type(selected_id))
+# print(selected_id)
+# print(type(selected_id))
+
+matching_products = [p for p in products if str(p["id"]) == str(selected_id)] #> (list)
+# print(matching_products)
+# print(type(matching_products))
+
+matching_product = matching_products[0] #> (dictionary)
+# print(matching_product)
+# print(type(matching_product))
+
+print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
