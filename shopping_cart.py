@@ -32,16 +32,18 @@ def to_usd(my_price):
 
 #print(products)
 
-selected_id = input("Please input a product identifier, or 'DONE' if there are no more items: ") #> "9" (string)
-# print(selected_id)
-# print(type(selected_id))
+while True: 
+    selected_id = input("Please input a product identifier, or 'DONE' if there are no more items: ") #> "9" (string)
+    # print(selected_id)
+    # print(type(selected_id))
+    if selected_id == "DONE": 
+        break
+    else: 
+        matching_products = [p for p in products if str(p["id"]) == str(selected_id)] #> (list)
+        # print(matching_products)
+        # print(type(matching_products))
+        matching_product = matching_products[0] #> (dictionary)
+        # print(matching_product)
+        # print(type(matching_product))
+        print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
 
-matching_products = [p for p in products if str(p["id"]) == str(selected_id)] #> (list)
-# print(matching_products)
-# print(type(matching_products))
-
-matching_product = matching_products[0] #> (dictionary)
-# print(matching_product)
-# print(type(matching_product))
-
-print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
