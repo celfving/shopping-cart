@@ -35,10 +35,16 @@ def to_usd(my_price):
 # INPUT
 
 # got timestamp code from https://thispointer.com/python-how-to-get-current-date-and-time-or-timestamp/ 
+import os
+import dotenv
+from dotenv import load_dotenv
+load_dotenv()
+# got hint for tax rate from after class office hours 
+TAX_RATE = float(os.getenv("TAX_RATE",default = ".1"))
 import time 
 from datetime import datetime
 
-total_price = 0
+subtotal_price = 0
 selected_ids = []
 
 while True: 
@@ -48,7 +54,6 @@ while True:
     if selected_id == "DONE": 
         break
     else: 
-        
         selected_ids.append(selected_id)
 
 # OUTPUT
@@ -62,9 +67,10 @@ print("11TH STREET GROCERY")
 print("--------------------")
 print("Web: www.11thstreetgrocery.com")
 print("Phone: 1.555.123.4567")
-print('Current Timestamp : ', timeStr)
+print('Checkout Time : ', timeStr)
 print("--------------------")
 
+print("Shopping Cart Items: ")
 for selected_id in selected_ids: 
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)] #> (list)
     # print(matching_products)
@@ -72,7 +78,13 @@ for selected_id in selected_ids:
     matching_product = matching_products[0] #> (dictionary)
     # print(matching_product)
     # print(type(matching_product))
-    total_price = total_price + matching_product["price"]
-    print("+ " + matching_product["name"] + " " + str(matching_product["price"]))
+    subtotal_price = subtotal_price + matching_product["price"]
+    print("+ " + matching_product["name"] + " " + "(" + to_usd(float(str(matching_product["price"]))) + ") ")
 
-print("TOTAL PRICE: " + str(total_price)) # FORMAT AS USD
+print("--------------------")
+
+print("Subtotal: " + to_usd(float(str(subtotal_price)))) 
+sales_tax = (subtotal_price * TAX_RATE)
+print("NYC Sales Tax (8.75%): ", to_usd(float(sales_tax)))
+total_price = to_usd(subtotal_price + sales_tax)
+print("Total: ", total_price) 
