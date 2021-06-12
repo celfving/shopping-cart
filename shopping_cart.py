@@ -67,7 +67,7 @@ print("11TH STREET GROCERY")
 print("--------------------")
 print("Web: www.11thstreetgrocery.com")
 print("Phone: 1.555.123.4567")
-print('Checkout Time : ', timeStr)
+print("Checkout Time:", timeStr)
 print("--------------------")
 
 print("Shopping Cart Items: ")
@@ -80,7 +80,6 @@ for selected_id in selected_ids:
     # print(type(matching_product))
     subtotal_price = subtotal_price + matching_product["price"]
     print("+ " + matching_product["name"] + " " + "(" + to_usd(float(str(matching_product["price"]))) + ") ")
-
 print("--------------------")
 
 print("Subtotal: " + to_usd(float(str(subtotal_price)))) 
@@ -88,3 +87,7 @@ sales_tax = (subtotal_price * TAX_RATE)
 print("NYC Sales Tax (8.75%): ", to_usd(float(sales_tax)))
 total_price = to_usd(subtotal_price + sales_tax)
 print("Total: ", total_price) 
+print("--------------------")
+
+print("Thank you for your business! Please come again!")
+print("--------------------")
