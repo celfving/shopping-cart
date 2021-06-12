@@ -34,6 +34,10 @@ def to_usd(my_price):
 
 # INPUT
 
+# got timestamp code from https://thispointer.com/python-how-to-get-current-date-and-time-or-timestamp/ 
+import time 
+from datetime import datetime
+
 total_price = 0
 selected_ids = []
 
@@ -51,6 +55,16 @@ while True:
 
 # print(selected_ids)
 
+timeStr = time.ctime()
+
+print("--------------------")
+print("11TH STREET GROCERY")
+print("--------------------")
+print("Web: www.11thstreetgrocery.com")
+print("Phone: 1.555.123.4567")
+print('Current Timestamp : ', timeStr)
+print("--------------------")
+
 for selected_id in selected_ids: 
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)] #> (list)
     # print(matching_products)
@@ -59,6 +73,6 @@ for selected_id in selected_ids:
     # print(matching_product)
     # print(type(matching_product))
     total_price = total_price + matching_product["price"]
-    print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
+    print("+ " + matching_product["name"] + " " + str(matching_product["price"]))
 
 print("TOTAL PRICE: " + str(total_price)) # FORMAT AS USD
