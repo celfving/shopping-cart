@@ -10,7 +10,7 @@ After creating the remote repo, use GitHub Desktop software or the command-line 
 After cloning the repo, navigate there from the command-line:
 
 ```sh
-cd ~/Documents/GitHub/rock-paper-scissors-exercise
+cd ~/Documents/GitHub/shopping-cart
 ```
 
 Use your text editor or the command-line to create a file in that repo called "shopping_cart.py", and then place the following contents inside:
