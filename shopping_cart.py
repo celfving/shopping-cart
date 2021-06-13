@@ -1,4 +1,5 @@
 # shopping_cart.py
+# Guided screencast helped significantly with set up code
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
